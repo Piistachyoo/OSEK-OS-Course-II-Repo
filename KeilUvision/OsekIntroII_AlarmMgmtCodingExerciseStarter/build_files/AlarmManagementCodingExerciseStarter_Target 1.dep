@@ -1,0 +1,30 @@
+Dependencies for Project 'AlarmManagementCodingExerciseStarter', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARM_Compiler_5.06u7
+F (..\..\OsekLib\hook.c)(0x652DF224)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\oil -I ..\..\OsekLib -I ..\OsekIntroII_Example3-I.\RTE\_Target_1-IC:\Users\omarm\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\omarm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="538" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o .\build_files\hook.o --omf_browse .\build_files\hook.crf --depend .\build_files\hook.d)
+I (..\..\OsekLib\OsTypes.h)(0x652DF224)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E8312)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E8312)
+F (..\..\OsekLib\counter.c)(0x652DF224)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\oil -I ..\..\OsekLib -I ..\OsekIntroII_Example3-I.\RTE\_Target_1-IC:\Users\omarm\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\omarm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="538" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o .\build_files\counter.o --omf_browse .\build_files\counter.crf --depend .\build_files\counter.d)
+I (..\..\OsekLib\counter.h)(0x652DF224)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E8312)
+I (..\..\oil\OsCfg.h)(0x652E27B8)
+I (..\..\OsekLib\OsTypes.h)(0x652DF224)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E8312)
+F (..\..\OsekLib\counter.h)(0x652DF224)()
+F (..\..\OsekLib\os.h)(0x652DF224)()
+F (..\..\OsekLib\OsekLib.lib)(0x652DF224)()
+F (..\..\OsekLib\OsTypes.h)(0x652DF224)()
+F (..\..\OsekLib\startup\keilUvisoin_startup.s)(0x652DF224)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Target_1-IC:\Users\omarm\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\omarm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "TM4C123GH6PM SETA 1" --pd "_RTE_ SETA 1"--list .\keiluvisoin_startup.lst --xref -o .\build_files\keiluvisoin_startup.o --depend .\build_files\keiluvisoin_startup.d)
+F (..\..\oil\OsCfg.c)(0x652E27B8)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\oil -I ..\..\OsekLib -I ..\OsekIntroII_Example3-I.\RTE\_Target_1-IC:\Users\omarm\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\omarm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="538" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o .\build_files\oscfg.o --omf_browse .\build_files\oscfg.crf --depend .\build_files\oscfg.d)
+I (..\..\oil\OsCfg.h)(0x652E27B8)
+I (..\..\OsekLib\OsTypes.h)(0x652DF224)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E8312)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E8312)
+F (..\..\oil\OsCfg.h)(0x652E27B8)()
+F (.\AlarmManagementCodingExerciseStarter.c)(0x652E27A9)(-c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork -I ..\..\oil -I ..\..\OsekLib -I ..\OsekIntroII_Example3-I.\RTE\_Target_1-IC:\Users\omarm\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\omarm\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123-D__UVISION_VERSION="538" -D_RTE_ -DTM4C123GH6PM -D_RTE_-o .\build_files\alarmmanagementcodingexercisestarter.o --omf_browse .\build_files\alarmmanagementcodingexercisestarter.crf --depend .\build_files\alarmmanagementcodingexercisestarter.d)
+I (..\..\OsekLib\os.h)(0x652DF224)
+I (..\..\oil\OsCfg.h)(0x652E27B8)
+I (..\..\OsekLib\OsTypes.h)(0x652DF224)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdbool.h)(0x5E8E8312)
+I (C:\Keil_v5\ARM\ARM_Compiler_5.06u7\include\stdint.h)(0x5E8E8312)
+I (..\OsekIntroII_Example3\switch.h)(0x652DF224)

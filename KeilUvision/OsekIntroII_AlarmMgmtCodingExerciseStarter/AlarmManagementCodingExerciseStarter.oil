@@ -12,7 +12,7 @@
  *                   ... 
  *             }; 
  *
- /
+ */
 CPU CORTEX-M4 {
    OS S_OSEK {
       STATUS = EXTENDED ;
@@ -27,24 +27,55 @@ CPU CORTEX-M4 {
       USERESSCHEDULER = FALSE;
       SYSTEMTICKMS = 10 ; 
    };
-   TASK /*REPLACE WITH TASK ID */{
-      /*REPLACE THE TASK ATTRIBUTES */
+   TASK AppTask_PulseWidthUpdate{
+      PRIORITY = 20;
+      SCHEDULE = FULL;
+      ACTIVATION = 1;
+      AUTOSTART = FALSE
+      STACKSIZE = 50;
+      RESOURCE = g_PwmValue;
    };         
-   TASK /*REPLACE WITH TASK ID */{
-      /*REPLACE THE TASK ATTRIBUTES */
+   TASK AppTask_PwmOn{
+      PRIORITY = 10;
+      SCHEDULE = FULL;
+      ACTIVATION = 1;
+      AUTOSTART = FALSE
+      STACKSIZE = 50;
+      RESOURCE = g_PwmValue;
    }; 
-   ALARM /*REPLACE WITH ALARM ID */ {
-      /*REPLACE THE ALARM ATTRIBUTES */
+   ALARM Alrm_PulseWidthUpdate {
+      COUNTER = MainCounter;
+      ACTION = ACTIVATETASK  {
+            TASK = AppTask_PulseWidthUpdate;
+      };
+      AUTOSTART = TRUE {
+            ALARMTIME = 200; 
+            CYCLETIME = 50;
+      };
    };
-   ALARM /*REPLACE WITH ALARM ID */ {
-      /*REPLACE THE ALARM ATTRIBUTES */
+   ALARM Alrm_PwmOn {
+      COUNTER = MainCounter;
+      ACTION = ACTIVATETASK  {
+            TASK = AppTask_PwmOn;
+      };
+      AUTOSTART = TRUE {
+            ALARMTIME = 200; 
+            CYCLETIME = 10;
+      };
    };       
-   ALARM /*REPLACE WITH ALARM ID */ {
-      /*REPLACE THE ALARM ATTRIBUTES */ 
+   ALARM Alrm_PwmOff {
+      COUNTER = MainCounter;
+      ACTION = ALARMCALLBACK  {
+            ALARMCALLBACKNAME = "PwmOFF_CB";
+      };
+      AUTOSTART = FALSE;
    };      
    COUNTER MainCounter {
       MINCYCLE = 1;
       MAXALLOWEDVALUE = 0xFFFFFFFF;
       TICKSPERBASE = 1;
    };
+   RESOURCE pwm_width {
+      RESOURCEPROPERITY = STANDARD;
+   }
 };
