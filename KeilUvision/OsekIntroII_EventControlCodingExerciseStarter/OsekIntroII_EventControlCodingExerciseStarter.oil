@@ -12,7 +12,7 @@
  *                   ... 
  *             }; 
  *
- /
+ */
 CPU CORTEX-M4 {
    OS S_OSEK {
       STATUS = EXTENDED ;
@@ -27,24 +27,70 @@ CPU CORTEX-M4 {
       USERESSCHEDULER = FALSE;
       SYSTEMTICKMS = 10 ; 
    };
-   TASK /*REPLACE WITH TASK ID */{
-      /*REPLACE THE TASK ATTRIBUTES */
+   TASK AppTask_PwmHandler{
+      PRIORITY = 11;
+      SCHEDULE = FULL;
+      ACTIVATION = 1;
+      AUTOSTART = TRUE; 
+      STACKSIZE = 50;
+      EVENT = EventPwmOn ; 
+      EVENT = EventPwmOff ; 
+      RESOURCE = PWM_WIDTH;
    };  
    TASK AppTask_PulseWidthUpdate{
-      /*REPLACE THE TASK ATTRIBUTES */
+      PRIORITY = 10;
+      SCHEDULE = FULL;
+      ACTIVATION = 1;
+      AUTOSTART = TRUE; 
+      STACKSIZE = 50;
+      EVENT = EventPwmUpdate ; 
+      RESOURCE = PWM_WIDTH;
    }
-   ALARM /* REPLACLE WITH ALARM ID */ {
-      /*REPLACE WITH ALARM OBJ ATTRIBUTES */
+   ALARM Alrm_PulseWidthUpdate {
+      COUNTER = MainCounter;
+      ACTION = SETEVENT  {
+         TASK = AppTask_PulseWidthUpdate;
+         EVENT = EventPwmUpdate; 
+      };
+      AUTOSTART = TRUE {
+         ALARMTIME = 200; 
+         CYCLETIME = 10; 
+      };
    }
-   ALARM /* REPLACLE WITH ALARM ID */ {
-      /*REPLACE WITH ALARM OBJ ATTRIBUTES */
+   ALARM Alrm_PwmOn {
+      COUNTER = MainCounter;
+      ACTION = SETEVENT  {
+         TASK = AppTask_PwmHandler;
+         EVENT = EventPwmOn; 
+      };
+      AUTOSTART = TRUE {
+         ALARMTIME = 200; 
+         CYCLETIME = 10; 
+      };
    };
-   ALARM /* REPLACLE WITH ALARM ID */ {
-      /*REPLACE WITH ALARM OBJ ATTRIBUTES */
+   ALARM Alrm_PwmOff {
+            COUNTER = MainCounter;
+      ACTION = SETEVENT  {
+         TASK = AppTask_PwmHandler;
+         EVENT = EventPwmOff; 
+      };
+      AUTOSTART = FALSE;
    };   
    COUNTER MainCounter {
       MINCYCLE = 1;
       MAXALLOWEDVALUE = 0xFFFFFFFF;
       TICKSPERBASE = 1;
    };
+   EVENT EventPwmOff{
+            MASK = AUTO ; 
+   }
+   EVENT EventPwmOn{
+            MASK = AUTO ; 
+   }
+   EVENT EventPwmUpdate{
+            MASK = AUTO ; 
+   }
+   RESOURCE PWM_WIDTH {
+      RESOURCEPROPERITY = STANDARD;
+   }
 };
